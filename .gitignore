@@ -1,3 +1,7 @@
+#etc
+.gradle
+build
+.idea
 # Compiled class file
 *.class
 
