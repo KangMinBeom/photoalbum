@@ -1,4 +1,4 @@
-package com.squarecross.photoalbum.DTO;
+package com.squarecross.photoalbum.dto;
 
 import java.util.Date;
 
