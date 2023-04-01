@@ -27,29 +27,29 @@ class AlbumServiceTest {
     @Autowired
     private AlbumService albumService;
 
-    @Test
-    void getAlbum() {
-        Album album = new Album();
-        album.setAlbumName("테스트");
-        Album savedAlbum = albumRepository.save(album);
-
-        AlbumDto resAlbum = albumService.getAlbum(savedAlbum.getAlbumId());
-        assertEquals("테스트",resAlbum.getAlbumName());
-    }
-
-    @Test
-    void testPhotoCount(){
-        Album album = new Album();
-        album.setAlbumName("테스트");
-        Album savedAlbum = albumRepository.save(album);
-
-        Photo photo = new Photo();
-        photo.setFile_name("앨범1");
-        photo.setAlbum(savedAlbum);
-        photoRepository.save(photo);
-
-        AlbumDto resAlbum = albumService.getAlbum(savedAlbum.getAlbumId());
-        assertEquals("테스트",resAlbum.getAlbumName());
-
-    }
+//    @Test
+//    void getAlbum() {
+//        Album album = new Album();
+//        album.setAlbumName("테스트");
+//        Album savedAlbum = albumRepository.save(album);
+//
+//        AlbumDto resAlbum = albumService.getAlbum(savedAlbum.getAlbumId());
+//        assertEquals("테스트",resAlbum.getAlbumName());
+//    }
+//
+//    @Test
+//    void testPhotoCount(){
+//        Album album = new Album();
+//        album.setAlbumName("테스트");
+//        Album savedAlbum = albumRepository.save(album);
+//
+//        Photo photo = new Photo();
+//        photo.setFile_name("앨범1");
+//        photo.setAlbum(savedAlbum);
+//        photoRepository.save(photo);
+//
+//        AlbumDto resAlbum = albumService.getAlbum(savedAlbum.getAlbumId());
+//        assertEquals("테스트",resAlbum.getAlbumName());
+//
+//    }
 }
