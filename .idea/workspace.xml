@@ -5,50 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="69b9fdba-6603-4fc5-b738-d4cfc6d02810" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/photos/original/1/Arrow.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photos/original/1/Baylor.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photos/original/1/Breslin.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photos/original/1/Charleston.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photos/original/2/Everest.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photos/original/2/Farren.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photos/original/2/Gianni.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photos/original/2/Jess.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photos/original/3/Jo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photos/original/3/Kendall.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photos/original/3/Landyn.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photos/original/3/Lennon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photos/original/4/Mark.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photos/original/4/Memphis.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photos/original/4/Parker.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photos/original/4/Pat.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photos/original/5/Phoenix.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photos/original/5/Skyler.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photos/original/5/Tandy.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photos/original/5/Tennyson.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photos/original/5/Tory.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photos/thumb/1/Arrow.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photos/thumb/1/Baylor.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photos/thumb/1/Breslin.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photos/thumb/1/Charleston.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photos/thumb/2/Everest.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photos/thumb/2/Farren.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photos/thumb/2/Gianni.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photos/thumb/2/Jess.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photos/thumb/3/Jo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photos/thumb/3/Kendall.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photos/thumb/3/Landyn.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photos/thumb/3/Lennon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photos/thumb/4/Mark.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photos/thumb/4/Memphis.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photos/thumb/4/Parker.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photos/thumb/4/Pat.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photos/thumb/5/Phoenix.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photos/thumb/5/Skyler.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photos/thumb/5/Tandy.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photos/thumb/5/Tennyson.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/photos/thumb/5/Tory.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/squarecross/photoalbum/controller/AlbumController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/squarecross/photoalbum/service/Constants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/squarecross/photoalbum/controller/AlbumController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/squarecross/photoalbum/controller/AlbumController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/squarecross/photoalbum/mapper/AlbumMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/squarecross/photoalbum/mapper/AlbumMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/squarecross/photoalbum/service/AlbumService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/squarecross/photoalbum/service/AlbumService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/squarecross/photoalbum/service/AlbumServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/squarecross/photoalbum/service/AlbumServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -93,20 +54,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "last_opened_file_path": "C:/photoalbum",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/photoalbum&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\photoalbum" />
@@ -118,7 +79,7 @@
       <recent name="com.squarecross.photoalbum.service" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.PhotoalbumApplication">
+  <component name="RunManager" selected="JUnit.AlbumServiceTest.testAlbumCreate">
     <configuration name="PhotoalbumApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.squarecross.photoalbum.PhotoalbumApplication" />
       <module name="photoalbum.main" />
@@ -132,7 +93,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AlbumServiceTest.testPhotoCount" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AlbumServiceTest.testAlbumCreate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="photoalbum.test" />
       <extension name="coverage">
         <pattern>
@@ -142,21 +103,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.squarecross.photoalbum.service" />
       <option name="MAIN_CLASS_NAME" value="com.squarecross.photoalbum.service.AlbumServiceTest" />
-      <option name="METHOD_NAME" value="testPhotoCount" />
+      <option name="METHOD_NAME" value="testAlbumCreate" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="All in photoalbum (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="photoalbum" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="All in photoalbum (2)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="All in photoalbum (3)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="photoalbum" />
       <option name="PACKAGE_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
@@ -172,13 +125,28 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PhotoalbumApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="photoalbum.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.squarecross.photoalbum.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.squarecross.photoalbum" />
+      <option name="MAIN_CLASS_NAME" value="com.squarecross.photoalbum.PhotoalbumApplicationTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AlbumServiceTest.testAlbumCreate" />
         <item itemvalue="Application.PhotoalbumApplication" />
+        <item itemvalue="JUnit.PhotoalbumApplicationTests" />
+        <item itemvalue="JUnit.All in photoalbum (3)" />
         <item itemvalue="JUnit.All in photoalbum" />
-        <item itemvalue="JUnit.All in photoalbum (2)" />
-        <item itemvalue="JUnit.All in photoalbum (1)" />
-        <item itemvalue="JUnit.AlbumServiceTest.testPhotoCount" />
       </list>
     </recent_temporary>
   </component>
@@ -192,5 +160,25 @@
       <updated>1679931389307</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/com/squarecross/photoalbum/service/AlbumServiceTest.java</url>
+          <line>60</line>
+          <properties class="com.squarecross.photoalbum.service.AlbumServiceTest" method="testAlbumCreate">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/squarecross/photoalbum/service/AlbumServiceTest.java</url>
+          <line>71</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -4,10 +4,11 @@ import com.squarecross.photoalbum.service.AlbumService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.io.IOException;
+import java.util.Map;
+
 @RequestMapping("/albums")
 @RestController
 public class AlbumController {
@@ -18,4 +19,28 @@ public class AlbumController {
         AlbumDto album = albumService.getAlbum(albumId);
         return new ResponseEntity<>(album, HttpStatus.OK);
     }
+
+//    @RequestMapping(value="/{albumId}", method = RequestMethod.GET)
+//    public ResponseEntity<AlbumDto> getAlbumByQuery(@RequestParam(value="albumId") final Long albumId){
+//        AlbumDto album = albumService.getAlbum(albumId);
+//        return new ResponseEntity<>(album, HttpStatus.OK);
+//    }
+//
+//    @PostMapping("/json_body")
+//    public ResponseEntity<AlbumDto> getAlbumByJson(@RequestBody AlbumDto albumDto){
+//        AlbumDto album = albumService.getAlbum(albumDto.getAlbumId());
+//        return new ResponseEntity<>(album, HttpStatus.OK);
+//
+//    }
+
+    @RequestMapping(value="", method = RequestMethod.POST)
+    public ResponseEntity<AlbumDto> createAlbum(@RequestBody final AlbumDto albumDto) throws IOException {
+        AlbumDto savedAlbumDto = albumService.createAlbum(albumDto);
+        return new ResponseEntity<>(savedAlbumDto, HttpStatus.OK);
+
+    }
+
+
+
+
 }
