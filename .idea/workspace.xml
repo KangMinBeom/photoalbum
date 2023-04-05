@@ -5,10 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="69b9fdba-6603-4fc5-b738-d4cfc6d02810" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/squarecross/photoalbum/service/Constants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/squarecross/photoalbum/controller/AlbumController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/squarecross/photoalbum/controller/AlbumController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/squarecross/photoalbum/domain/Photo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/squarecross/photoalbum/domain/Photo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/squarecross/photoalbum/dto/AlbumDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/squarecross/photoalbum/dto/AlbumDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/squarecross/photoalbum/mapper/AlbumMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/squarecross/photoalbum/mapper/AlbumMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/squarecross/photoalbum/repository/AlbumRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/squarecross/photoalbum/repository/AlbumRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/squarecross/photoalbum/repository/PhotoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/squarecross/photoalbum/repository/PhotoRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/squarecross/photoalbum/service/AlbumService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/squarecross/photoalbum/service/AlbumService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/squarecross/photoalbum/service/AlbumServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/squarecross/photoalbum/service/AlbumServiceTest.java" afterDir="false" />
     </list>
@@ -79,7 +82,7 @@
       <recent name="com.squarecross.photoalbum.service" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.AlbumServiceTest.testAlbumCreate">
+  <component name="RunManager" selected="Application.PhotoalbumApplication">
     <configuration name="PhotoalbumApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.squarecross.photoalbum.PhotoalbumApplication" />
       <module name="photoalbum.main" />
@@ -109,15 +112,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="All in photoalbum (3)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="photoalbum" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
+    <configuration name="AlbumServiceTest.testAlbumRepository" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="photoalbum.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.squarecross.photoalbum.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.squarecross.photoalbum.service" />
+      <option name="MAIN_CLASS_NAME" value="com.squarecross.photoalbum.service.AlbumServiceTest" />
+      <option name="METHOD_NAME" value="testAlbumRepository" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="All in photoalbum" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="All in photoalbum (3)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="photoalbum" />
       <option name="PACKAGE_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
@@ -142,11 +153,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.AlbumServiceTest.testAlbumCreate" />
         <item itemvalue="Application.PhotoalbumApplication" />
+        <item itemvalue="JUnit.AlbumServiceTest.testAlbumRepository" />
+        <item itemvalue="JUnit.AlbumServiceTest.testAlbumCreate" />
         <item itemvalue="JUnit.PhotoalbumApplicationTests" />
         <item itemvalue="JUnit.All in photoalbum (3)" />
-        <item itemvalue="JUnit.All in photoalbum" />
       </list>
     </recent_temporary>
   </component>
@@ -160,25 +171,5 @@
       <updated>1679931389307</updated>
     </task>
     <servers />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/test/java/com/squarecross/photoalbum/service/AlbumServiceTest.java</url>
-          <line>60</line>
-          <properties class="com.squarecross.photoalbum.service.AlbumServiceTest" method="testAlbumCreate">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/com/squarecross/photoalbum/service/AlbumServiceTest.java</url>
-          <line>71</line>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

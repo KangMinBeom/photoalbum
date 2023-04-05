@@ -12,23 +12,23 @@ public class Photo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "photo_id", unique = true, nullable = false)
-    private Long photo_id;
+    private Long photoId;
 
     @Column(name = "file_name", unique = false, nullable = true)
-    private String file_name;
+    private String fileName;
 
     @Column(name = "thumb_url", unique = false, nullable = true)
-    private String thumb_url;
+    private String thumbUrl;
 
     @Column(name = "original_url", unique = false, nullable = true)
-    private String original_url;
+    private String originalUrl;
 
     @Column(name = "file_size", unique = false, nullable = true)
-    private int file_size;
+    private int fileSize;
 
     @CreationTimestamp
     @Column(name = "uploaded_at", unique = false, nullable = true)
-    private Date uploaded_at;
+    private Date uploadedAt;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "album_id")
@@ -36,52 +36,52 @@ public class Photo {
 
     public Photo(){};
 
-    public Long getPhoto_id() {
-        return photo_id;
+    public Long getPhotoId() {
+        return photoId;
     }
 
-    public void setPhoto_id(Long photo_id) {
-        this.photo_id = photo_id;
+    public void setPhotoId(Long photoId) {
+        this.photoId = photoId;
     }
 
-    public String getFile_name() {
-        return file_name;
+    public String getFileName() {
+        return fileName;
     }
 
-    public void setFile_name(String file_name) {
-        this.file_name = file_name;
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
     }
 
-    public String getThumb_url() {
-        return thumb_url;
+    public String getThumbUrl() {
+        return thumbUrl;
     }
 
-    public void setThumb_url(String thumb_url) {
-        this.thumb_url = thumb_url;
+    public void setThumbUrl(String thumbUrl) {
+        this.thumbUrl = thumbUrl;
     }
 
-    public String getOriginal_url() {
-        return original_url;
+    public String getOriginalUrl() {
+        return originalUrl;
     }
 
-    public void setOriginal_url(String original_url) {
-        this.original_url = original_url;
+    public void setOriginalUrl(String originalUrl) {
+        this.originalUrl = originalUrl;
     }
 
-    public int getFile_size() {
-        return file_size;
+    public int getFileSize() {
+        return fileSize;
     }
 
-    public void setFile_size(int file_size) {
-        this.file_size = file_size;
+    public void setFileSize(int fileSize) {
+        this.fileSize = fileSize;
     }
 
-    public Date getUploaded_at() {
-        return uploaded_at;
+    public Date getUploadedAt() {
+        return uploadedAt;
     }
 
-    public void setUploaded_at(Date uploaded_at) {
-        this.uploaded_at = uploaded_at;
+    public void setUploadedAt(Date uploadedAt) {
+        this.uploadedAt = uploadedAt;
     }
 
     public Album getAlbum() {
@@ -91,4 +91,6 @@ public class Photo {
     public void setAlbum(Album album) {
         this.album = album;
     }
+
+
 }

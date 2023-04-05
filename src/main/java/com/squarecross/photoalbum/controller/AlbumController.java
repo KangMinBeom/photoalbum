@@ -1,4 +1,5 @@
 package com.squarecross.photoalbum.controller;
+import com.squarecross.photoalbum.domain.Album;
 import com.squarecross.photoalbum.dto.AlbumDto;
 import com.squarecross.photoalbum.service.AlbumService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Map;
 
 @RequestMapping("/albums")
@@ -37,7 +39,15 @@ public class AlbumController {
     public ResponseEntity<AlbumDto> createAlbum(@RequestBody final AlbumDto albumDto) throws IOException {
         AlbumDto savedAlbumDto = albumService.createAlbum(albumDto);
         return new ResponseEntity<>(savedAlbumDto, HttpStatus.OK);
+    }
 
+    @RequestMapping(value="", method = RequestMethod.GET)
+    public ResponseEntity<List<AlbumDto>>
+    getAlbumList(@RequestParam(value="keyword", required=false, defaultValue="") final String keyword,
+                 @RequestParam(value="sort", required=false, defaultValue = "byDate") final String sort,
+                 @RequestParam(value="orderBy", required=false, defaultValue = "") final String orderBy){
+        List<AlbumDto> albumDtos = albumService.getAlbumList(keyword, sort,orderBy);
+        return new ResponseEntity<>(albumDtos,HttpStatus.OK);
     }
 
 
