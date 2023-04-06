@@ -14,6 +14,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.io.IOException;
 import java.util.List;
+import java.util.Optional;
 import java.util.concurrent.TimeUnit;
 
 import com.squarecross.photoalbum.service.Constants;
@@ -97,4 +98,32 @@ class AlbumServiceTest {
         assertEquals("aaab", resName.get(1).getAlbumName()); // 1번째 Index가 두번째 앨범명 aaab 인지 체크
         assertEquals(2, resName.size()); // aaa 이름을 가진 다른 앨범이 없다는 가정하에, 검색 키워드에 해당하는 앨범 필터링 체크
     }
+
+    @Test
+    void testChangeAlbumName() throws IOException{
+        AlbumDto albumDto = new AlbumDto();
+        albumDto.setAlbumName("변경전");
+        AlbumDto res = albumService.createAlbum(albumDto);
+
+        Long albumId =res.getAlbumId();
+
+        AlbumDto updateDto = new AlbumDto();
+        updateDto.setAlbumName("변경후");
+        albumService.changeName(albumId,updateDto);
+
+        AlbumDto updatedDto = albumService.getAlbum(albumId);
+
+        assertEquals("변경후",updatedDto.getAlbumName());
+    }
+
+    @Test
+    void testDeleteAlbum() throws IOException{
+        Album album = new Album();
+        album.setAlbumName("테스트 앨범");
+        Album savedAlbum = albumRepository.save(album);
+        Long album1 = savedAlbum.getAlbumId();
+
+        albumService.deleteAlbum(album1);
+    }
+
 }

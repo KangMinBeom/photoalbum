@@ -18,6 +18,4 @@ public interface AlbumRepository extends JpaRepository<Album, Long>{
 
     List<Album> findByAlbumNameContainingOrderByAlbumNameDesc(String keyword);
 
-
-
 }

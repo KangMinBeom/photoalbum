@@ -4,13 +4,16 @@ import com.squarecross.photoalbum.domain.Album;
 import com.squarecross.photoalbum.domain.Photo;
 import com.squarecross.photoalbum.mapper.AlbumMapper;
 import com.squarecross.photoalbum.repository.PhotoRepository;
+import org.apache.tomcat.util.http.fileupload.FileUtils;
 import org.springframework.stereotype.Service;
 import com.squarecross.photoalbum.repository.AlbumRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.squarecross.photoalbum.dto.AlbumDto;
 import javax.persistence.EntityNotFoundException;
+import java.io.File;
 import java.io.IOException;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Objects;
 import java.util.Optional;
 import java.nio.file.Files;
@@ -97,5 +100,41 @@ public class AlbumService {
             albumDto.setThumbUrls(top4.stream().map(Photo::getThumbUrl).map(c -> Constants.PATH_PREFIX + c).collect(Collectors.toList()));
         }
         return albumDtos;
+    }
+
+    public AlbumDto changeName(Long AlbumId, AlbumDto albumDto){
+        Optional<Album> album = this.albumRepository.findById(AlbumId);
+        if(album.isEmpty()){
+            throw new NoSuchElementException(String.format("Album ID '%d'가 존재하지 않습니다.",AlbumId));
+        }
+
+        Album updateAlbum= album.get();
+        updateAlbum.setAlbumName(albumDto.getAlbumName());
+        Album savedAlbum = this.albumRepository.save(updateAlbum);
+        return AlbumMapper.convertToDto(savedAlbum);
+    }
+
+    private void deleteAlbumDirectories(Album album) throws IOException {
+        Files.deleteIfExists(Paths.get(Constants.PATH_PREFIX + "/photos/original/" + album.getAlbumId()));
+        Files.deleteIfExists(Paths.get(Constants.PATH_PREFIX + "/photos/thumb/" + album.getAlbumId()));
+    }
+
+    private void deletePhoto(Album album) throws IOException {
+        FileUtils.cleanDirectory(new File(Constants.PATH_PREFIX + "/photos/original/" + album.getAlbumId()));
+        FileUtils.cleanDirectory(new File(Constants.PATH_PREFIX + "/photos/thumb/" + album.getAlbumId()));
+    }
+
+    public void deleteAlbum(Long AlbumId) throws IOException{
+        Optional<Album> album = this.albumRepository.findById(AlbumId);
+        if(album.isEmpty()){
+            throw new NoSuchElementException(String.format("Album ID '%d'가 존재하지 않습니다.",AlbumId));
+        }else{
+            albumRepository.deleteById(AlbumId);
+        }
+
+        List<Photo> photos = photoRepository.findByAlbum_AlbumId(AlbumId);
+        Album album1 = album.get();
+        deleteAlbumDirectories(album1);
+        deletePhoto(album1);
     }
 }
