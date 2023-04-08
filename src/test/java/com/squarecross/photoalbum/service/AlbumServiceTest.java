@@ -1,6 +1,7 @@
 package com.squarecross.photoalbum.service;
 
 import com.squarecross.photoalbum.domain.Photo;
+import com.squarecross.photoalbum.dto.PhotoDto;
 import com.squarecross.photoalbum.mapper.AlbumMapper;
 import com.squarecross.photoalbum.repository.PhotoRepository;
 import org.junit.jupiter.api.Test;
@@ -34,6 +35,9 @@ class AlbumServiceTest {
 
     @Autowired
     private AlbumService albumService;
+
+    @Autowired
+    private PhotoService photoService;
 
 //    @Test
 //    void getAlbum() {
@@ -123,7 +127,26 @@ class AlbumServiceTest {
         Album savedAlbum = albumRepository.save(album);
         Long album1 = savedAlbum.getAlbumId();
 
+        Photo photo = new Photo();
+        photo.setFileName("테스트 사진");
+        Photo savedPhoto = photoRepository.save(photo);
+        Long album2 = savedPhoto.getPhotoId();
+
+
         albumService.deleteAlbum(album1);
+
+        assertEquals(null,album1);
+        assertEquals(null,album2);
+    }
+
+    @Test
+    void testPhotoInfo() throws IOException{
+        Photo photo = new Photo();
+        photo.setFileName("테스트 사진");
+        Photo savedPhoto = photoRepository.save(photo);
+        Long album2 = savedPhoto.getPhotoId();
+
+        PhotoDto photoDto = photoService.getPhoto(album2);
     }
 
 }

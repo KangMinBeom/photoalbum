@@ -114,12 +114,12 @@ public class AlbumService {
         return AlbumMapper.convertToDto(savedAlbum);
     }
 
-    private void deleteAlbumDirectories(Album album) throws IOException {
-        Files.deleteIfExists(Paths.get(Constants.PATH_PREFIX + "/photos/original/" + album.getAlbumId()));
-        Files.deleteIfExists(Paths.get(Constants.PATH_PREFIX + "/photos/thumb/" + album.getAlbumId()));
-    }
+//    private void deleteAlbumDirectories(Album album) throws IOException {
+//        Files.deleteIfExists(Paths.get(Constants.PATH_PREFIX + "/photos/original/" + album.getAlbumId()));
+//        Files.deleteIfExists(Paths.get(Constants.PATH_PREFIX + "/photos/thumb/" + album.getAlbumId()));
+//    }
 
-    private void deletePhoto(Album album) throws IOException {
+    private void deleteAlbumDirectories(Album album) throws IOException {
         FileUtils.cleanDirectory(new File(Constants.PATH_PREFIX + "/photos/original/" + album.getAlbumId()));
         FileUtils.cleanDirectory(new File(Constants.PATH_PREFIX + "/photos/thumb/" + album.getAlbumId()));
     }
@@ -134,7 +134,7 @@ public class AlbumService {
 
         List<Photo> photos = photoRepository.findByAlbum_AlbumId(AlbumId);
         Album album1 = album.get();
+//        deletePhoto(album1);
         deleteAlbumDirectories(album1);
-        deletePhoto(album1);
     }
 }
