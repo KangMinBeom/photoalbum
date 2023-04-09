@@ -1,6 +1,7 @@
 package com.squarecross.photoalbum.domain;
 
 import jdk.jfr.Timestamp;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
