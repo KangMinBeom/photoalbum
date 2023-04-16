@@ -2,7 +2,9 @@ package com.squarecross.photoalbum.service;
 
 import com.squarecross.photoalbum.domain.Album;
 import com.squarecross.photoalbum.domain.Photo;
+import com.squarecross.photoalbum.dto.AlbumDto;
 import com.squarecross.photoalbum.dto.PhotoDto;
+import com.squarecross.photoalbum.mapper.AlbumMapper;
 import com.squarecross.photoalbum.mapper.PhotoMapper;
 import com.squarecross.photoalbum.repository.AlbumRepository;
 import com.squarecross.photoalbum.repository.PhotoRepository;
@@ -22,7 +24,9 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class PhotoService {
@@ -122,6 +126,16 @@ public class PhotoService {
             files.add(new File(Constants.PATH_PREFIX + res.get().getOriginalUrl()));
         }
         return files;
+    }
 
+    public List<PhotoDto> getPhotoList(String keyword, String sort){
+        List<Photo> photos = null;
+        if(Objects.equals(sort,"byName")){
+            photos = photoRepository.findByFileNameContainingOrderByFileNameAsc(keyword);
+        }else if(Objects.equals(sort,"byDate")) {
+            photos = photoRepository.findByFileNameContainingOrderByUploadedAtDesc(keyword);
+        }
+        List<PhotoDto>photoDtos = PhotoMapper.convertToDtoList(photos);
+        return photoDtos;
     }
 }

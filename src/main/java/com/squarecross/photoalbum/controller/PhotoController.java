@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletResponse;
+import javax.websocket.server.PathParam;
 import java.io.*;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -58,12 +59,11 @@ public class PhotoController {
                 IOUtils.copy(new FileInputStream(file), outputStream);
                 outputStream.close();
             }else{
-                String TEMP_ZIP_PATH = "D:/test_folder";
+//                String TEMP_ZIP_PATH = "D:/test_folder";
                 OutputStream outputStream = response.getOutputStream();
-                File zipFile = new File(TEMP_ZIP_PATH);
+//                File zipFile = new File(TEMP_ZIP_PATH);
                 byte[] buf = new byte[4096];
-
-                try(ZipOutputStream zipOutputStream = new ZipOutputStream(new FileOutputStream(zipFile))){
+                try(ZipOutputStream zipOutputStream = new ZipOutputStream(new FileOutputStream("result.zip"))){
                     List<File> files = photoService.getImageFilelist(photoIds);
 
                     for(File file : files){
@@ -80,9 +80,8 @@ public class PhotoController {
                         }
                     }
                 }
-                IOUtils.copy(new FileInputStream(zipFile), outputStream);
+                IOUtils.copy(new FileInputStream("result.zip"), outputStream);
                 outputStream.close();
-
 
             }
         } catch(FileNotFoundException e){
@@ -92,5 +91,14 @@ public class PhotoController {
         }
 
     }
+
+    @RequestMapping(value="", method = RequestMethod.GET)
+    public ResponseEntity<List<PhotoDto>> getPhotoList(
+                @RequestParam(value="keyword", required=false, defaultValue="") final String keyword,
+                 @RequestParam(value="sort", required=false, defaultValue = "byDate") final String sort){
+        List<PhotoDto> photoDtos = photoService.getPhotoList(keyword, sort);
+        return new ResponseEntity<>(photoDtos,HttpStatus.OK);
+    }
+
 
 }
