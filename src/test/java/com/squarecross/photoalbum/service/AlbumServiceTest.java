@@ -149,4 +149,24 @@ class AlbumServiceTest {
         PhotoDto photoDto = photoService.getPhoto(album2);
     }
 
+    @Test
+    void testPhotoList() throws IOException{
+        Album album = new Album();
+        album.setAlbumName("테스트 앨범");
+        Album savedAlbum = albumRepository.save(album);
+        Long album1 = savedAlbum.getAlbumId();
+
+        Photo photo = new Photo();
+        photo.setFileName("테스트 사진");
+        photo.setAlbum(savedAlbum);
+        Photo savedPhoto = photoRepository.save(photo);
+
+        Photo photo1 = new Photo();
+        photo1.setFileName("테스트 사진1");
+        photo1.setAlbum(savedAlbum);
+        Photo savedPhoto1 = photoRepository.save(photo1);
+
+        List<Photo> photos = photoRepository.findByAlbum_AlbumId(album1);
+    }
+
 }

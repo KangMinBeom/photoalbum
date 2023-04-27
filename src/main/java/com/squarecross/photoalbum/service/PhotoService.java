@@ -22,10 +22,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
@@ -128,14 +125,19 @@ public class PhotoService {
         return files;
     }
 
-    public List<PhotoDto> getPhotoList(String keyword, String sort){
-        List<Photo> photos = null;
-        if(Objects.equals(sort,"byName")){
-            photos = photoRepository.findByFileNameContainingOrderByFileNameAsc(keyword);
-        }else if(Objects.equals(sort,"byDate")) {
-            photos = photoRepository.findByFileNameContainingOrderByUploadedAtDesc(keyword);
+    public List<PhotoDto> getPhotoList(Long albumId, String keyword, String sort){
+        Optional<Album> res = albumRepository.findById(albumId);
+        if(res.isEmpty()){
+            throw new NoSuchElementException(String.format("Album ID '%d'가 존재하지 않습니다.",albumId));
+        }else{
+            List<Photo> photos = photoRepository.findByAlbum_AlbumId(res.get().getAlbumId());
+            if(Objects.equals(sort,"byName")){
+                photos = photoRepository.findByFileNameContainingOrderByFileNameAsc(keyword);
+            }else if(Objects.equals(sort,"byDate")) {
+                photos = photoRepository.findByFileNameContainingOrderByUploadedAtDesc(keyword);
+            }
+            List<PhotoDto>photoDtos = PhotoMapper.convertToDtoList(photos);
+            return photoDtos;
         }
-        List<PhotoDto>photoDtos = PhotoMapper.convertToDtoList(photos);
-        return photoDtos;
     }
 }

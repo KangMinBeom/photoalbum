@@ -93,10 +93,10 @@ public class PhotoController {
     }
 
     @RequestMapping(value="", method = RequestMethod.GET)
-    public ResponseEntity<List<PhotoDto>> getPhotoList(
+    public ResponseEntity<List<PhotoDto>> getPhotoList(@PathVariable("albumId") final Long albumId,
                 @RequestParam(value="keyword", required=false, defaultValue="") final String keyword,
                  @RequestParam(value="sort", required=false, defaultValue = "byDate") final String sort){
-        List<PhotoDto> photoDtos = photoService.getPhotoList(keyword, sort);
+        List<PhotoDto> photoDtos = photoService.getPhotoList(albumId ,keyword, sort);
         return new ResponseEntity<>(photoDtos,HttpStatus.OK);
     }
 
