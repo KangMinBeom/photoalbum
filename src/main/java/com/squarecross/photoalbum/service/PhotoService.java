@@ -8,6 +8,7 @@ import com.squarecross.photoalbum.mapper.AlbumMapper;
 import com.squarecross.photoalbum.mapper.PhotoMapper;
 import com.squarecross.photoalbum.repository.AlbumRepository;
 import com.squarecross.photoalbum.repository.PhotoRepository;
+import org.apache.tomcat.util.http.fileupload.FileUtils;
 import org.imgscalr.Scalr;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,8 +21,7 @@ import javax.swing.text.html.Option;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
+import java.nio.file.*;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -136,8 +136,49 @@ public class PhotoService {
             }else if(Objects.equals(sort,"byDate")) {
                 photos = photoRepository.findByFileNameContainingOrderByUploadedAtDesc(keyword);
             }
-            List<PhotoDto>photoDtos = PhotoMapper.convertToDtoList(photos);
+
+            List<PhotoDto> photoDtos = PhotoMapper.convertToDtoList1(photos);
             return photoDtos;
         }
+    }
+
+//    public List<PhotoDto> movePhotoList(Long photoIds, Long fromAlbumId, Long toAlbumId){
+//        Optional<Album> res = albumRepository.findById(fromAlbumId);
+//        if(res.isEmpty()){
+//            throw new NoSuchElementException(String.format("Album ID '%d'가 존재하지 않습니다.",fromAlbumId));
+//        }else{
+//            List<Photo> photos = photoRepository.findByAlbum_AlbumId(res.get().getAlbumId());
+//
+//            List<PhotoDto>photoDtos = PhotoMapper.convertToDtoList(photos);
+//            return photoDtos;
+//        }
+//    }
+
+    public List<PhotoDto> deletePhoto(Long albumId,PhotoDto photodto) throws IOException {
+        Optional<Album> album = albumRepository.findById(albumId);
+        if (album.isEmpty()) {
+            throw new NoSuchElementException(String.format("Album ID '%d'가 존재하지 않습니다.", albumId));
+        } else {
+            List<Long> photodtos = new ArrayList<>();
+            photodtos = photodto.getPhotoIds();
+            for(Long photo : photodtos){
+                Optional<Photo> filename = photoRepository.findById(photo);
+                if (album.isEmpty()) {
+                    throw new NoSuchElementException(String.format("Photo ID '%d'가 존재하지 않습니다.", photo));
+                }
+                Album album1 = album.get();
+                Photo photo1 = filename.get();
+                deletePhotoDirectories(album1, photo1);
+                photoRepository.deleteById(photo);
+            }
+            List<Photo> photos = photoRepository.findByAlbum_AlbumId(album.get().getAlbumId());
+            List<PhotoDto> photoDtos = PhotoMapper.convertToDtoList1(photos);
+            return photoDtos;
+            }
+        }
+
+    private void deletePhotoDirectories(Album album, Photo photo) throws IOException {
+        Files.deleteIfExists(Paths.get(Constants.PATH_PREFIX + "/photos/original/" + album.getAlbumId() + "/" + photo.getFileName()));
+        Files.deleteIfExists(Paths.get(Constants.PATH_PREFIX + "/photos/thumb/" + album.getAlbumId() + "/" + photo.getFileName()));
     }
 }

@@ -107,10 +107,10 @@ public class AlbumService {
         if(album.isEmpty()){
             throw new NoSuchElementException(String.format("Album ID '%d'가 존재하지 않습니다.",AlbumId));
         }
-
         Album updateAlbum= album.get();
         updateAlbum.setAlbumName(albumDto.getAlbumName());
         Album savedAlbum = this.albumRepository.save(updateAlbum);
+
         return AlbumMapper.convertToDto(savedAlbum);
     }
 
@@ -132,7 +132,7 @@ public class AlbumService {
             albumRepository.deleteById(AlbumId);
         }
 
-        List<Photo> photos = photoRepository.findByAlbum_AlbumId(AlbumId);
+//        List<Photo> photos = photoRepository.findByAlbum_AlbumId(AlbumId);
         Album album1 = album.get();
 //        deletePhoto(album1);
         deleteAlbumDirectories(album1);

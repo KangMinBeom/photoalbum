@@ -6,8 +6,18 @@
   <component name="ChangeListManager">
     <list default="true" id="69b9fdba-6603-4fc5-b738-d4cfc6d02810" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photos/original/1/임금표 (2).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/photos/original/1/임금표.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/photos/thumb/1/Arrow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/photos/thumb/1/Baylor.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/photos/thumb/1/Breslin.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/photos/thumb/1/Charleston.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/squarecross/photoalbum/controller/AlbumController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/squarecross/photoalbum/controller/AlbumController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/squarecross/photoalbum/controller/PhotoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/squarecross/photoalbum/controller/PhotoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/squarecross/photoalbum/dto/PhotoDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/squarecross/photoalbum/dto/PhotoDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/squarecross/photoalbum/mapper/PhotoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/squarecross/photoalbum/mapper/PhotoMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/squarecross/photoalbum/repository/PhotoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/squarecross/photoalbum/repository/PhotoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/squarecross/photoalbum/service/AlbumService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/squarecross/photoalbum/service/AlbumService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/squarecross/photoalbum/service/PhotoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/squarecross/photoalbum/service/PhotoService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/squarecross/photoalbum/service/AlbumServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/squarecross/photoalbum/service/AlbumServiceTest.java" afterDir="false" />
     </list>
@@ -60,7 +70,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/photoalbum&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/photoalbum/photos/original/1&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
@@ -69,6 +79,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\photoalbum\photos\original\1" />
       <recent name="C:\photoalbum" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
@@ -92,7 +103,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AlbumServiceTest.testDeleteAlbum" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AlbumServiceTest.testPhotoDelete" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="photoalbum.test" />
       <extension name="coverage">
         <pattern>
@@ -102,7 +113,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.squarecross.photoalbum.service" />
       <option name="MAIN_CLASS_NAME" value="com.squarecross.photoalbum.service.AlbumServiceTest" />
-      <option name="METHOD_NAME" value="testDeleteAlbum" />
+      <option name="METHOD_NAME" value="testPhotoDelete" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -158,10 +169,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.PhotoalbumApplication" />
+        <item itemvalue="JUnit.AlbumServiceTest.testPhotoDelete" />
         <item itemvalue="JUnit.AlbumServiceTest.testPhotoList" />
         <item itemvalue="JUnit.AlbumServiceTest.testPhotoInfo" />
         <item itemvalue="JUnit.PhotoalbumApplicationTests" />
-        <item itemvalue="JUnit.AlbumServiceTest.testDeleteAlbum" />
       </list>
     </recent_temporary>
   </component>
@@ -194,20 +205,6 @@
           <properties class="java.lang.NullPointerException" package="java.lang" />
           <option name="timeStamp" value="1" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/test/java/com/squarecross/photoalbum/service/AlbumServiceTest.java</url>
-          <line>152</line>
-          <properties class="com.squarecross.photoalbum.service.AlbumServiceTest" method="testPhotoList">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/com/squarecross/photoalbum/service/AlbumServiceTest.java</url>
-          <line>169</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>

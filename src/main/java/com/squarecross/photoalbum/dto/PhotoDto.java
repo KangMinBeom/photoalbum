@@ -1,8 +1,17 @@
 package com.squarecross.photoalbum.dto;
-
 import java.util.Date;
+import java.util.List;
 
 public class PhotoDto {
+    public List<Long> getPhotoIds() {
+        return photoIds;
+    }
+
+    public void setPhotoIds(List<Long> photoIds) {
+        this.photoIds = photoIds;
+    }
+
+    private  List<Long> photoIds;
     private Long photoId;
     private String fileName;
     private int fileSize;

@@ -100,5 +100,14 @@ public class PhotoController {
         return new ResponseEntity<>(photoDtos,HttpStatus.OK);
     }
 
+    @RequestMapping(value="", method = RequestMethod.DELETE)
+    public ResponseEntity<List<PhotoDto>> deletePhoto(@PathVariable("albumId") final Long albumId,
+                                            @RequestBody PhotoDto photodto) throws IOException {
+       List<PhotoDto> photodtos= photoService.deletePhoto(albumId,photodto);
+        return new ResponseEntity<>(photodtos,HttpStatus.OK);
+
+    }
+
+
 
 }

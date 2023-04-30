@@ -28,12 +28,12 @@ public class AlbumController {
 //        return new ResponseEntity<>(album, HttpStatus.OK);
 //    }
 //
-//    @PostMapping("/json_body")
-//    public ResponseEntity<AlbumDto> getAlbumByJson(@RequestBody AlbumDto albumDto){
-//        AlbumDto album = albumService.getAlbum(albumDto.getAlbumId());
-//        return new ResponseEntity<>(album, HttpStatus.OK);
-//
-//    }
+    @PostMapping("/json_body")
+    public ResponseEntity<AlbumDto> getAlbumByJson(@RequestBody AlbumDto albumDto){
+        AlbumDto album = albumService.getAlbum(albumDto.getAlbumId());
+        return new ResponseEntity<>(album, HttpStatus.OK);
+
+    }
 
     @RequestMapping(value="", method = RequestMethod.POST)
     public ResponseEntity<AlbumDto> createAlbum(@RequestBody final AlbumDto albumDto) throws IOException {

@@ -12,6 +12,7 @@ import com.squarecross.photoalbum.domain.Album;
 import com.squarecross.photoalbum.repository.AlbumRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.io.IOException;
 import java.util.List;
@@ -19,6 +20,8 @@ import java.util.Optional;
 import java.util.concurrent.TimeUnit;
 
 import com.squarecross.photoalbum.service.Constants;
+
+import static com.squarecross.photoalbum.service.Constants.PATH_PREFIX;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
