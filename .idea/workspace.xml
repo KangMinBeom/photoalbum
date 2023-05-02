@@ -6,18 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="69b9fdba-6603-4fc5-b738-d4cfc6d02810" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/photos/original/1/임금표 (2).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photos/original/1/임금표.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photos/thumb/1/Arrow.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photos/thumb/1/Baylor.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photos/thumb/1/Breslin.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/photos/thumb/1/Charleston.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/squarecross/photoalbum/controller/AlbumController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/squarecross/photoalbum/controller/AlbumController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/photos/original/1/Arrow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/photos/original/1/Baylor.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/photos/original/1/Breslin.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/photos/original/1/Charleston.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/photos/thumb/1/임금표 (2).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/photos/thumb/1/임금표.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/squarecross/photoalbum/controller/PhotoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/squarecross/photoalbum/controller/PhotoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/squarecross/photoalbum/dto/AlbumDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/squarecross/photoalbum/dto/AlbumDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/squarecross/photoalbum/dto/PhotoDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/squarecross/photoalbum/dto/PhotoDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/squarecross/photoalbum/mapper/PhotoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/squarecross/photoalbum/mapper/PhotoMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/squarecross/photoalbum/repository/PhotoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/squarecross/photoalbum/repository/PhotoRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/squarecross/photoalbum/service/AlbumService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/squarecross/photoalbum/service/AlbumService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/squarecross/photoalbum/service/PhotoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/squarecross/photoalbum/service/PhotoService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/squarecross/photoalbum/service/AlbumServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/squarecross/photoalbum/service/AlbumServiceTest.java" afterDir="false" />
     </list>
@@ -63,22 +60,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/photoalbum/photos/original/1&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "last_opened_file_path": "C:/photoalbum/photos/thumb/1",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\photoalbum\photos\thumb\1" />
       <recent name="C:\photoalbum\photos\original\1" />
       <recent name="C:\photoalbum" />
     </key>
@@ -103,6 +101,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="AlbumServiceTest.FileTransfer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="photoalbum.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.squarecross.photoalbum.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.squarecross.photoalbum.service" />
+      <option name="MAIN_CLASS_NAME" value="com.squarecross.photoalbum.service.AlbumServiceTest" />
+      <option name="METHOD_NAME" value="FileTransfer" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AlbumServiceTest.testPhotoDelete" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="photoalbum.test" />
       <extension name="coverage">
@@ -114,22 +128,6 @@
       <option name="PACKAGE_NAME" value="com.squarecross.photoalbum.service" />
       <option name="MAIN_CLASS_NAME" value="com.squarecross.photoalbum.service.AlbumServiceTest" />
       <option name="METHOD_NAME" value="testPhotoDelete" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AlbumServiceTest.testPhotoInfo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="photoalbum.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.squarecross.photoalbum.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.squarecross.photoalbum.service" />
-      <option name="MAIN_CLASS_NAME" value="com.squarecross.photoalbum.service.AlbumServiceTest" />
-      <option name="METHOD_NAME" value="testPhotoInfo" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -151,17 +149,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PhotoalbumApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AlbumServiceTest.testmovePhoto" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="photoalbum.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.squarecross.photoalbum.*" />
+          <option name="PATTERN" value="com.squarecross.photoalbum.service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.squarecross.photoalbum" />
-      <option name="MAIN_CLASS_NAME" value="com.squarecross.photoalbum.PhotoalbumApplicationTests" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="com.squarecross.photoalbum.service" />
+      <option name="MAIN_CLASS_NAME" value="com.squarecross.photoalbum.service.AlbumServiceTest" />
+      <option name="METHOD_NAME" value="testmovePhoto" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -169,10 +168,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.PhotoalbumApplication" />
+        <item itemvalue="JUnit.AlbumServiceTest.FileTransfer" />
+        <item itemvalue="JUnit.AlbumServiceTest.testmovePhoto" />
         <item itemvalue="JUnit.AlbumServiceTest.testPhotoDelete" />
         <item itemvalue="JUnit.AlbumServiceTest.testPhotoList" />
-        <item itemvalue="JUnit.AlbumServiceTest.testPhotoInfo" />
-        <item itemvalue="JUnit.PhotoalbumApplicationTests" />
       </list>
     </recent_temporary>
   </component>
@@ -221,5 +220,10 @@
         <watch expression="photo" />
       </configuration>
     </watches-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/photoalbum$AlbumServiceTest_testmovePhoto.ic" NAME="AlbumServiceTest.testmovePhoto Coverage Results" MODIFIED="1682950886356" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.squarecross.photoalbum.service.*</FILTER>
+    </SUITE>
   </component>
 </project>

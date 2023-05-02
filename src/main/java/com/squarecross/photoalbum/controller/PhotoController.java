@@ -108,6 +108,14 @@ public class PhotoController {
 
     }
 
+    @RequestMapping(value="/move", method = RequestMethod.PUT)
+    public ResponseEntity<List<PhotoDto>> MovePhoto(@PathVariable("albumId") final Long albumId,
+                                                      @RequestBody PhotoDto photodto) throws IOException {
+        List<PhotoDto> photodtos= photoService.movePhoto(albumId,photodto);
+        return new ResponseEntity<>(photodtos,HttpStatus.OK);
+
+    }
+
 
 
 }

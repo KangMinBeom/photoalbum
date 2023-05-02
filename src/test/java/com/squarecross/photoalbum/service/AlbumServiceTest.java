@@ -172,4 +172,49 @@ class AlbumServiceTest {
         List<Photo> photos = photoRepository.findByAlbum_AlbumId(album1);
     }
 
+
+    @Test
+    void testmovePhoto() throws IOException{
+
+        Album album = new Album();
+        album.setAlbumName("테스트 앨범");
+        album.setAlbumId(album.getAlbumId());
+        Album savedAlbum = albumRepository.save(album);
+        Long album1 = savedAlbum.getAlbumId();
+
+        Album album2 = new Album();
+        album2.setAlbumName("테스트 앨범1");
+        album2.setAlbumId(album2.getAlbumId());
+        Album savedAlbum1 = albumRepository.save(album2);
+        Long album11 = savedAlbum.getAlbumId();
+
+
+
+        Photo photo = new Photo();
+        photo.setFileName("테스트 사진");
+        photo.setAlbum(savedAlbum);
+        Photo savedPhoto = photoRepository.save(photo);
+
+        Photo photo1 = new Photo();
+        photo1.setFileName("테스트 사진1");
+        photo1.setAlbum(savedAlbum);
+        Photo savedPhoto1 = photoRepository.save(photo1);
+
+        savedPhoto.setAlbum(album2);
+
+        savedPhoto.getAlbum();
+
+
+
+    }
+
+
+    @Test
+    public void FileTransfer() throws IOException {
+
+        Path in = Paths.get(Constants.PATH_PREFIX + "/photos/original/" + 2 + "/" + "Arrow.png" );
+        Path out = Paths.get(Constants.PATH_PREFIX + "/photos/original/" + 1 + "/" +  "Arrow.png");
+        Files.copy(out, in);
+    }
+
 }

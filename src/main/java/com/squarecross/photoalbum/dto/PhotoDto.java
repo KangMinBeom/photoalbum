@@ -1,15 +1,10 @@
 package com.squarecross.photoalbum.dto;
+import lombok.Builder;
+import lombok.ToString;
+
 import java.util.Date;
 import java.util.List;
-
 public class PhotoDto {
-    public List<Long> getPhotoIds() {
-        return photoIds;
-    }
-
-    public void setPhotoIds(List<Long> photoIds) {
-        this.photoIds = photoIds;
-    }
 
     private  List<Long> photoIds;
     private Long photoId;
@@ -19,6 +14,24 @@ public class PhotoDto {
     private String thumbUrl;
     private Date uploadedAt;
     private Long albumId;
+
+    private Long toAlbumId;
+
+    public Long getToAlbumId() {
+        return toAlbumId;
+    }
+
+    public void setToAlbumId(Long toAlbumId) {
+        this.toAlbumId = toAlbumId;
+    }
+
+    public List<Long> getPhotoIds() {
+        return photoIds;
+    }
+
+    public void setPhotoIds(List<Long> photoIds) {
+        this.photoIds = photoIds;
+    }
 
     public Long getPhotoId() {
         return photoId;

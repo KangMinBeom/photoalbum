@@ -1,13 +1,17 @@
 package com.squarecross.photoalbum.dto;
 
+import lombok.ToString;
+
 import javax.print.DocFlavor;
 import java.util.Date;
 import java.util.List;
 
 public class AlbumDto {
+    Long toAlbumId;
     Long albumId;
     String albumName;
     Date createdAt;
+
     int count;
 
     private List<String> thumbUrls;

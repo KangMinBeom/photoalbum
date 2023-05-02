@@ -12,6 +12,7 @@ import org.apache.tomcat.util.http.fileupload.FileUtils;
 import org.imgscalr.Scalr;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.FileCopyUtils;
 import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -142,18 +143,6 @@ public class PhotoService {
         }
     }
 
-//    public List<PhotoDto> movePhotoList(Long photoIds, Long fromAlbumId, Long toAlbumId){
-//        Optional<Album> res = albumRepository.findById(fromAlbumId);
-//        if(res.isEmpty()){
-//            throw new NoSuchElementException(String.format("Album ID '%d'가 존재하지 않습니다.",fromAlbumId));
-//        }else{
-//            List<Photo> photos = photoRepository.findByAlbum_AlbumId(res.get().getAlbumId());
-//
-//            List<PhotoDto>photoDtos = PhotoMapper.convertToDtoList(photos);
-//            return photoDtos;
-//        }
-//    }
-
     public List<PhotoDto> deletePhoto(Long albumId,PhotoDto photodto) throws IOException {
         Optional<Album> album = albumRepository.findById(albumId);
         if (album.isEmpty()) {
@@ -163,8 +152,8 @@ public class PhotoService {
             photodtos = photodto.getPhotoIds();
             for(Long photo : photodtos){
                 Optional<Photo> filename = photoRepository.findById(photo);
-                if (album.isEmpty()) {
-                    throw new NoSuchElementException(String.format("Photo ID '%d'가 존재하지 않습니다.", photo));
+                if (filename.isEmpty()) {
+                    throw new NoSuchElementException(String.format("Photo ID '%d'가 존재하지 않습니다.", filename));
                 }
                 Album album1 = album.get();
                 Photo photo1 = filename.get();
@@ -180,5 +169,45 @@ public class PhotoService {
     private void deletePhotoDirectories(Album album, Photo photo) throws IOException {
         Files.deleteIfExists(Paths.get(Constants.PATH_PREFIX + "/photos/original/" + album.getAlbumId() + "/" + photo.getFileName()));
         Files.deleteIfExists(Paths.get(Constants.PATH_PREFIX + "/photos/thumb/" + album.getAlbumId() + "/" + photo.getFileName()));
+    }
+
+    public List<PhotoDto> movePhoto(Long albumId, PhotoDto photodto) throws IOException {
+        Optional<Album> album = albumRepository.findById(albumId);
+        if (album.isEmpty()) {
+            throw new NoSuchElementException(String.format("Album ID '%d'가 존재하지 않습니다.", albumId));
+        } else {
+            Optional<Album> toAlbum = albumRepository.findById(photodto.getToAlbumId());
+            if (toAlbum.isEmpty()) {
+                throw new NoSuchElementException(String.format("이동할 Album ID '%d'가 존재하지 않습니다.", toAlbum));
+            }else{
+                List<Long> photodtos = new ArrayList<>();
+                photodtos = photodto.getPhotoIds();
+                for (Long photo : photodtos) {
+                    Optional<Photo> photos = photoRepository.findById(photo);
+                    if (photos.isEmpty()) {
+                        throw new NoSuchElementException(String.format("Photo ID '%d'가 존재하지 않습니다.", photo));
+                    }else{
+                        Photo updateAlbumId = photos.get();
+                        updateAlbumId.setAlbum(toAlbum.get());
+                        Photo savedPhoto = this.photoRepository.save(updateAlbumId);;
+                        Album album1 = album.get();
+                        Album toAlbum1 = toAlbum.get();
+                        movePhoto(toAlbum1,album1,savedPhoto);
+                        deletePhotoDirectories(album1, savedPhoto);
+                    }
+                }
+            }
+        }
+        List<Photo> photos = photoRepository.findByAlbum_AlbumId(album.get().getAlbumId());
+        List<PhotoDto> photoDtos = PhotoMapper.convertToDtoList1(photos);
+        return photoDtos;
+    }
+    private void movePhoto(Album album,Album album1, Photo photo) throws IOException {
+        Path in = Paths.get(Constants.PATH_PREFIX + "/photos/original/" + album.getAlbumId() + "/" + photo.getFileName());
+        Path out = Paths.get(Constants.PATH_PREFIX + "/photos/original/" + album1.getAlbumId() + "/" +  photo.getFileName());
+        Path in1 = Paths.get(Constants.PATH_PREFIX + "/photos/thumb/" + album.getAlbumId() + "/" + photo.getFileName());
+        Path out1 = Paths.get(Constants.PATH_PREFIX + "/photos/thumb/" + album1.getAlbumId() + "/" +  photo.getFileName());
+        Files.copy(out, in);
+        Files.copy(out1, in1);
     }
 }
