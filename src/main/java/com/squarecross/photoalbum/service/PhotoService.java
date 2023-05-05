@@ -50,7 +50,7 @@ public class PhotoService {
     private String getNextFileName(String fileName, Long albumId){
         String fileNameNoExt = StringUtils.stripFilenameExtension(fileName);
         String ext = StringUtils.getFilenameExtension(fileName);
-        if(ext.equals("png") && ext.equals("jpeg") && ext.equals("bmp") && ext.equals("gif")){
+        if(ext.equals("png") || ext.equals("jpeg") || ext.equals("bmp") || ext.equals("gif")){
             Optional<Photo> res = photoRepository.findByFileNameAndAlbum_AlbumId(fileName, albumId);
 
             int count = 2;
