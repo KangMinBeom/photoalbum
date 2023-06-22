@@ -19,5 +19,5 @@
 ![Blank_diagram_-_Page_1_(2)](https://github.com/KangMinBeom/photoalbum/assets/109460223/40817f09-295c-49ff-939d-31d098e76f3b)
 
 ## API Documentation
-<https://www.notion.so/API-11b3723c7cef458f8d8eb642f4b9b4ee>
+<[<https://www.notion.so/API-11b3723c7cef458f8d8eb642f4b9b4ee>](https://bony-walleye-2e4.notion.site/API-11b3723c7cef458f8d8eb642f4b9b4ee?pvs=4)https://bony-walleye-2e4.notion.site/API-11b3723c7cef458f8d8eb642f4b9b4ee?pvs=4>
 
