@@ -15,7 +15,7 @@
 - 문서관리 : Notion
 
 ## ERD
-이미지 상에는 로그인 클래스가 있지만 로그인 기능은 구현하지 않았습니다!
+이미지 상에는 User 클래스가 있지만 User 기능은 구현하지 않았습니다!
 ![Blank_diagram_-_Page_1_(2)](https://github.com/KangMinBeom/photoalbum/assets/109460223/40817f09-295c-49ff-939d-31d098e76f3b)
 
 ## API Documentation
